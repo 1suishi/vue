@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>first vue</title>
+	<script src="./node_modules/vue/dist/vue.min.js"></script>
+</head>
+<body>
+	<div id="demo">
+		<ul>
+			<li v-for="todo in todos">
+				{{{todo.text}}}
+			</li>
+		</ul>	
+	</div>
+	
+	<script>
+		new Vue({
+		  el: '#demo',
+		  data: {
+		    todos: [
+		    	{text:'Learn JavaScript'},
+		    	{text:'Learn Vue.js'},
+		    	{text:'Build Something Awesome'}
+		    ]
+		  }
+		});
+	</script>
+
+</body>
+</html>
