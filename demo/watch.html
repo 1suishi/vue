@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>$watch vue</title>
+	<script src="../node_modules/vue/dist/vue.min.js"></script>
+</head>
+<body>
+	<div id="app">
+		<p>First name: <input v-model="first"/></p>
+		<p>Last name: <input v-model="last"/></p>
+		<p>Full name: <input v-model="full"/></p>	
+	</div>
+	
+	<script>
+		var data = {
+			first:"Tom",
+			last:"John",
+			full :'Tom John'
+		}
+		var vm = new Vue({
+		  el: '#app',
+		  data: data,
+		});
+		vm.$watch("first",function(val){
+			this.full = val + " " +this.last;
+		});
+		vm.$watch("last",function(val){
+			this.full = this.first+ " " + val;
+		})
+	</script>
+
+</body>
+</html>

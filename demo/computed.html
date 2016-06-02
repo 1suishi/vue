@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>computed vue</title>
+	<script src="../node_modules/vue/dist/vue.min.js"></script>
+</head>
+<body>
+	<div id="app">
+		<p>First name: <input v-model="first"/></p>
+		<p>Last name: <input v-model="last"/></p>
+		<p>Full name: <input v-model="full"/></p>	
+	</div>
+	
+	<script>
+		var data = {
+			first:"Tom",
+			last:"John"
+		}
+		var vm = new Vue({
+		  el: '#app',
+		  data: data,
+		  computed:{
+		  	full:{
+		  		get:function(){
+		  			return this.first + " " + this.last;
+		  		},
+		  		set:function(value){
+		  			names = value.trim().split(" ");
+		  			this.first  = names[0];
+		  			this.last = names[names.length-1];
+		  		}
+		  	}
+		  }
+		});
+	</script>
+
+</body>
+</html>
