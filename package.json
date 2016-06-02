@@ -1,0 +1,22 @@
+{
+  "name": "vue-learn",
+  "version": "1.0.0",
+  "description": "vue mvvm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benniuer/vue.git"
+  },
+  "author": "lzw",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/benniuer/vue/issues"
+  },
+  "homepage": "https://github.com/benniuer/vue#readme",
+  "dependencies": {
+    "vue": "^1.0.24"
+  }
+}
