@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>computed vue</title>
+	<script src="../node_modules/vue/dist/vue.min.js"></script>
+</head>
+<body>
+	<div id="example-2">
+	  <button v-on:click="say('hi')">Say Hi</button>
+	  <button v-on:click="say">Say What</button>
+	  <button v-on:click="say('hello',$event)">Say What</button>
+	</div>
+	<script>
+		new Vue({
+		  el: '#example-2',
+		  methods: {
+		    say: function (msg) {
+		      console.log(arguments)
+		    }
+		  }
+		})
+	</script>
+
+</body>
+</html>
