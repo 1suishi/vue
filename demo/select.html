@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>computed vue</title>
+	<script src="../node_modules/vue/dist/vue.min.js"></script>
+</head>
+<body>
+	<div id="app">
+		<select v-model="selecte_name">
+		  <option>A</option>
+		  <option>B</option>
+		  <option>C</option>
+		</select>
+		<span>Selected: {{ selecte_name }}</span>
+		<br>
+		<select v-model="selected">
+		  <option v-for="option in options" v-bind:value="option.value">
+		    {{ option.text }}
+		  </option>
+		</select>
+		<span>Selected: {{ selected }}</span>
+		
+	</div>
+	
+	<script>
+		var data = {
+			selecte_name : "C",
+			selected: 'A',
+		    options: [
+		      { text: 'One', value: 'A' },
+		      { text: 'Two', value: 'B' },
+		      { text: 'Three', value: 'C' }
+		    ]
+		}
+		var vm = new Vue({
+		  el: '#app',
+		  data: data,
+		});
+	</script>
+
+</body>
+</html>
