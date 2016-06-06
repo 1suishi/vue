@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>component</title>
+	<script src="../../node_modules/vue/dist/vue.min.js"></script>
+</head>
+<body>
+	<div id="mount-point"></div>
+	<script>
+		// 创建可复用的构造器
+		var Profile = Vue.extend({
+		  template: '<p>{{firstName}} {{lastName}} aka {{alias}}</p>'
+		})
+		// 创建一个 Profile 实例
+		var profile = new Profile({
+			el:'#mount-point',
+			data: {
+				firstName: 'Walter',
+				lastName: 'White',
+				alias: 'Heisenberg'
+			}
+		});
+		console.log(profile)
+		// 挂载到元素上
+		// profile.$mount('#mount-point')
+	</script>
+
+</body>
+</html>

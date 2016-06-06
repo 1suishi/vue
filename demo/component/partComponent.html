@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>component</title>
+	<script src="../../node_modules/vue/dist/vue.min.js"></script>
+</head>
+<body>
+	<div id="mount-point">
+		<parent>
+			
+		</parent>
+	</div>
+	<script>
+		var child =Vue.extend({
+			template:'<div>the child component {{message}}</div>',
+			data:function(){
+				return {
+					message:"child child child"
+				}
+			}
+		});
+
+
+		var parent = Vue.extend({
+			template: 
+				"<div>parent component {{message}}"+
+				"<child></child>"+
+				"</div>",
+			data:function(){
+				return {
+					message:"parent parent parent",
+				}
+			},
+			components: {
+			    // <child> 只能用在父组件模板内
+			    'child': child
+			}
+		});
+		Vue.component("parent",parent);
+
+		new Vue({
+			el:"#mount-point",
+		})
+
+	</script>
+
+</body>
+</html>

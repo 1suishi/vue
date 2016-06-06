@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>component</title>
+	<script src="../../node_modules/vue/dist/vue.min.js"></script>
+</head>
+<body>
+	<div id="example">
+	  <my-component></my-component>
+	   <my-component2></my-component2>
+	   <my-component></my-component>
+	   <my-component2></my-component2>
+	</div>
+	<script>
+		// 定义
+		var MyComponent = Vue.extend({
+		  template: '<div>A custom component!{{message}}</div>',
+		  data:function(){
+		  	return {
+		  		message:"fdfdf",
+		  	}
+		  }
+		});
+
+		var MyComponent2 = Vue.extend({
+		  template: '<div>the second component!{{message}}</div>',
+		  data:function(){
+		  	return {
+		  		message:"hahaha the second",
+		  	}
+		  }
+		})
+
+		// 注册
+		Vue.component('my-component', MyComponent)
+		Vue.component('my-component2', MyComponent2)
+
+		// 创建根实例
+		var vm = new Vue({
+		  el: '#example',
+		})
+	</script>
+
+</body>
+</html>
