@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>component</title>
+	<script src="../../node_modules/vue/dist/vue.min.js"></script>
+</head>
+<body>
+	<div id="example">
+		<my-component></my-component>
+	</div>
+	<script>
+		
+		var child =Vue.extend({
+			template:'<div>the child component {{message}}</div>',
+			data:function(){
+				return {
+					message:"child child child"
+				}
+			},
+		});
+
+
+		Vue.component('my-component', {
+		  template: '<div>A custom component!{{msg}}<child></child></div>',
+		  data:function(){
+		  	return {
+		  		msg:"component component component"
+		  	}
+		  },
+		  components: {
+		    'child': {
+				template:'<div>the child component {{message}}</div>',
+				data:function(){
+					return {
+						message:"child child child"
+					}
+				},
+			}
+		  }
+		})
+		
+
+		var vm = new Vue({
+		  el: '#example',
+		})
+	</script>
+
+</body>
+</html>
