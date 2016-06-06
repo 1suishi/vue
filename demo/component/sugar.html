@@ -10,23 +10,15 @@
 	</div>
 	<script>
 		
-		var child =Vue.extend({
-			template:'<div>the child component {{message}}</div>',
-			data:function(){
-				return {
-					message:"child child child"
-				}
-			},
-		});
 
 
 		Vue.component('my-component', {
-		  template: '<div>A custom component!{{msg}}<child></child></div>',
-		  data:function(){
-		  	return {
-		  		msg:"component component component"
-		  	}
-		  },
+		  	template: '<div>A custom component!{{msg}}<child></child></div>',
+			data:function(){
+				return {
+					msg:"component component component"
+				}
+			},
 		  components: {
 		    'child': {
 				template:'<div>the child component {{message}}</div>',
